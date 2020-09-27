@@ -6,8 +6,6 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class ChildData(
-    @SerializedName("author")
-    val author: String?,
     @SerializedName("id")
     val id: String,
     @SerializedName("name")
@@ -15,7 +13,7 @@ data class ChildData(
     @SerializedName("secure_media")
     val secureMedia: SecureMedia?,
     @SerializedName("selftext")
-    val selftext: String?,
+    val selfText: String?,
     @SerializedName("title")
     val title: String,
     @SerializedName("url")

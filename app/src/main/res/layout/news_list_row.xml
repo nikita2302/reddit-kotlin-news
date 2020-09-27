@@ -14,22 +14,9 @@
         android:text="@string/title"
         android:textColor="@color/colorPrimaryText"
         android:textSize="@dimen/text_normal"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/user_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:text="@string/user_name"
-        android:textColor="@color/colorSecondaryText"
-        android:textSize="@dimen/sub_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/news_title" />
 
     <ImageView
         android:id="@+id/news_thumbnail"
@@ -38,9 +25,8 @@
         android:layout_margin="@dimen/margin_small"
         android:contentDescription="@string/news_thumbnail_content_description"
         android:src="@drawable/image_not_found"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user_name" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/news_title" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

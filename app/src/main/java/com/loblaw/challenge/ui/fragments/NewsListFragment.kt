@@ -93,9 +93,13 @@ class NewsListFragment : Fragment(), NewsItemClickListener {
      */
     private fun setObservers() {
         newsListViewModel.newsPagedList.observe(viewLifecycleOwner, Observer {
+            layout.news_list_progress.visibility = View.GONE
+            layout.news_list_recycler_view.visibility = View.VISIBLE
+
             if (refresh_layout.isRefreshing) {
-                refresh_layout.isRefreshing = false;
+                refresh_layout.isRefreshing = false
             }
+
             adapter.submitList(it)
         })
 

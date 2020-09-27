@@ -11,7 +11,6 @@ import com.bumptech.glide.Glide
 import com.loblaw.challenge.Constants
 import com.loblaw.challenge.R
 import com.loblaw.challenge.model.ChildData
-import com.loblaw.challenge.ui.activities.MainActivity
 import kotlinx.android.synthetic.main.fragment_news_detail.view.*
 
 /**
@@ -47,12 +46,12 @@ class NewsDetailFragment : Fragment() {
             layout.image_thumbnail.adjustViewBounds = true
         }
 
-        newsInformation.selftext.let {
+        newsInformation.selfText.let {
             //In one JSON Object self text was present but it was empty.
             // Therefore if condition is required to not display empty space
-            if (newsInformation.selftext!!.isNotEmpty()) {
+            if (newsInformation.selfText!!.isNotEmpty()) {
                 layout.news_details.visibility = View.VISIBLE
-                layout.news_details.text = newsInformation.selftext
+                layout.news_details.text = newsInformation.selfText
             }
         }
 

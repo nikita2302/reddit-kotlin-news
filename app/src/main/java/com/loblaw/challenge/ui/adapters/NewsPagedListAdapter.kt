@@ -28,7 +28,6 @@ class NewsPagedListAdapter(private val context: Context, private val newsItemCli
             if(newsItem != null) {
                 val newsInformation = newsItem.childData
                 tvNewsTitle.text = newsInformation.title
-                tvUserName.text = newsInformation.author
 
                 if(newsInformation.secureMedia != null) {
                     ivNewsThumbnail.visibility = View.VISIBLE
@@ -49,7 +48,6 @@ class NewsPagedListAdapter(private val context: Context, private val newsItemCli
 
 class NewsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val tvNewsTitle = view.news_title
-    val tvUserName = view.user_name
     val ivNewsThumbnail = view.news_thumbnail
     val clNewsLayout = view.news_row_layout
 }

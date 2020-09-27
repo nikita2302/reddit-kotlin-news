@@ -1,65 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:overScrollMode="never"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragments.NewsDetailFragment"
-    android:padding="@dimen/padding_normal">
+    android:padding="@dimen/padding_normal"
+    tools:context=".ui.fragments.NewsDetailFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/news_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/news_title"
-            android:textSize="@dimen/text_normal"
+            android:layout_marginTop="@dimen/margin_normal"
             android:textColor="@color/colorPrimaryText"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="@dimen/text_normal"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            android:layout_marginTop="@dimen/margin_normal"/>
-
-    <ImageView
-        android:id="@+id/image_thumbnail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_margin="@dimen/margin_small"
-        android:contentDescription="@string/news_thumbnail_content_description"
-        android:src="@drawable/image_not_found"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/news_title" />
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/news_details"
-        android:textSize="@dimen/sub_text"
-        android:textColor="@color/colorSecondaryText"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image_thumbnail"
-        android:layout_marginTop="@dimen/margin_normal"/>
+        <ImageView
+            android:id="@+id/image_thumbnail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            android:contentDescription="@string/news_thumbnail_content_description"
+            android:src="@drawable/image_not_found"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/news_title" />
 
         <TextView
+            android:id="@+id/news_details"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/url"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="@dimen/sub_text"
             android:visibility="gone"
-            android:textSize="@dimen/text_normal"
-            android:textColor="@color/colorAccent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/news_details"
-            android:layout_marginTop="@dimen/margin_normal"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_thumbnail" />
+
+        <TextView
+            android:id="@+id/url"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_normal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/news_details" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
