@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:overScrollMode="never"
-    android:padding="@dimen/padding_normal"
+    android:paddingStart="@dimen/padding_normal"
+    android:paddingEnd="@dimen/padding_normal"
     tools:context=".ui.fragments.NewsDetailFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
