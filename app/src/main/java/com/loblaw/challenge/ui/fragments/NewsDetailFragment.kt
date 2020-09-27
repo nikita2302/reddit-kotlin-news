@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.loblaw.challenge.Constants
@@ -37,7 +38,8 @@ class NewsDetailFragment : Fragment() {
         // Inflate the layout for this fragment
         layout = inflater.inflate(R.layout.fragment_news_detail, container, false)
 
-        layout.news_title.text = newsInformation.title
+        layout.news_title.text = HtmlCompat.fromHtml(newsInformation.title, HtmlCompat.FROM_HTML_MODE_LEGACY)
+
         if (newsInformation.secureMedia != null) {
             layout.image_thumbnail.visibility = View.VISIBLE
             Glide.with(layout.image_thumbnail.context)
@@ -46,7 +48,7 @@ class NewsDetailFragment : Fragment() {
             layout.image_thumbnail.adjustViewBounds = true
         }
 
-        newsInformation.selfText.let {
+        newsInformation.selfText?.let {
             //In one JSON Object self text was present but it was empty.
             // Therefore if condition is required to not display empty space
             if (newsInformation.selfText!!.isNotEmpty()) {
@@ -55,7 +57,7 @@ class NewsDetailFragment : Fragment() {
             }
         }
 
-        newsInformation.url.let {
+        newsInformation.url?.let {
             layout.url.visibility = View.VISIBLE
             layout.url.text = newsInformation.url
             layout.url.setOnClickListener {

@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.text.HtmlCompat
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -27,7 +28,7 @@ class NewsPagedListAdapter(private val context: Context, private val newsItemCli
         holder.apply {
             if(newsItem != null) {
                 val newsInformation = newsItem.childData
-                tvNewsTitle.text = newsInformation.title
+                tvNewsTitle.text = HtmlCompat.fromHtml(newsInformation.title, HtmlCompat.FROM_HTML_MODE_LEGACY)
 
                 if(newsInformation.secureMedia != null) {
                     ivNewsThumbnail.visibility = View.VISIBLE
